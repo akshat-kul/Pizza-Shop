@@ -12,7 +12,13 @@ from .models import OrderItem, ToppingItem, PizzaItem
 @method_decorator(csrf_exempt, name='dispatch')
 class Home(View):
     def get(self, request):
-        return JsonResponse("hello", status=200, safe=False)
+        message = {"message1": "Hello",
+            "message2": "Please visit the following urls", 
+        "url1": "http://localhost:8000/api/pizza/bases/",
+        "url2": "http://localhost:8000/api/pizza/toppings/",
+        "url3": "http://localhost:8000/api/orders/",
+        "url4": "http://localhost:8000/api/orders/10"}
+        return JsonResponse(message, status=200, safe=False)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class PizzaCart(View):
