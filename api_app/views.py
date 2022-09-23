@@ -1,5 +1,6 @@
 #from django.shortcuts import render
 from email.mime import base
+from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
@@ -8,6 +9,11 @@ import json
 from .models import OrderItem, ToppingItem, PizzaItem
 
 # Create your views here.
+@method_decorator(csrf_exempt, name='dispatch')
+class Home(View):
+    def get(self, request):
+        return JsonResponse("hello", status=200, safe=False)
+
 @method_decorator(csrf_exempt, name='dispatch')
 class PizzaCart(View):
 
