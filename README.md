@@ -29,3 +29,20 @@ $ python manage.py migrate
 ```console   
 $ python manage.py runserver  
 ```   
+
+5. Working endpoints:
+'''
+$ http://127.0.0.1:8000/api/pizza/bases/
+
+$ http://127.0.0.1:8000/api/pizza/toppings/
+
+$ http://127.0.0.1:8000/api/orders/
+
+$ http://127.0.0.1:8000/api/orders/10
+'''
+
+6. Additional:
+'''
+$ For additional testing of POST & GET methods postman collection is also added in the github repo
+$ Please do refer
+'''
